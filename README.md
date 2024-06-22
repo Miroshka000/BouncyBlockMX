@@ -1,3 +1,4 @@
+# BouncyBlocksMX
 BouncyBlocksMX is a plugin for Minecraft servers based on Nukkit that adds a unique physical feature to blocks in the Minecraft world. With this plugin, certain blocks can give players an extra boost when they jump or step on them, making movement across the map more dynamic and interesting.
 Key Features:
 Bounce Customization: Server administrators can configure the bounce strength for each type of block through the config.yml configuration file. This allows control over how high players are propelled when they step on special blocks.

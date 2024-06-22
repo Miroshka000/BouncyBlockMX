@@ -1,0 +1,102 @@
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision 2b94362d58da87d46c45fe2c1a89b197053282c5)
++++ /dev/null	(revision 2b94362d58da87d46c45fe2c1a89b197053282c5)
+@@ -1,3 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+Index: .idea/libraries/patched.xml
+===================================================================
+diff --git a/.idea/libraries/patched.xml b/.idea/libraries/patched.xml
+deleted file mode 100644
+--- a/.idea/libraries/patched.xml	(revision 2b94362d58da87d46c45fe2c1a89b197053282c5)
++++ /dev/null	(revision 2b94362d58da87d46c45fe2c1a89b197053282c5)
+@@ -1,9 +0,0 @@
+-<component name="libraryTable">
+-  <library name="patched">
+-    <CLASSES>
+-      <root url="jar://$PROJECT_DIR$/../../Survival/.cache/patched.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES />
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1719083742427)
++++ b/.idea/modules.xml	(date 1719083742427)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/BouncyBlockMX.iml" filepath="$PROJECT_DIR$/BouncyBlockMX.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: BouncyBlockMX.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\r\n    <exclude-output />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src\" isTestSource=\"false\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n    <orderEntry type=\"library\" name=\"patched\" level=\"project\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/BouncyBlockMX.iml b/BouncyBlockMX.iml
+--- a/BouncyBlockMX.iml	(revision 2b94362d58da87d46c45fe2c1a89b197053282c5)
++++ b/BouncyBlockMX.iml	(date 1719083742424)
+@@ -7,6 +7,6 @@
+     </content>
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
+-    <orderEntry type="library" name="patched" level="project" />
++    <orderEntry type="library" name="original-nukkit-1.0-SNAPSHOT" level="project" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1719083742485)
++++ b/.idea/vcs.xml	(date 1719083742485)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/libraries/original_nukkit_1_0_SNAPSHOT.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/original_nukkit_1_0_SNAPSHOT.xml b/.idea/libraries/original_nukkit_1_0_SNAPSHOT.xml
+new file mode 100644
+--- /dev/null	(date 1719083742459)
++++ b/.idea/libraries/original_nukkit_1_0_SNAPSHOT.xml	(date 1719083742459)
+@@ -0,0 +1,9 @@
++<component name="libraryTable">
++  <library name="original-nukkit-1.0-SNAPSHOT">
++    <CLASSES>
++      <root url="jar://$PROJECT_DIR$/../../Survival/original-nukkit-1.0-SNAPSHOT.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file

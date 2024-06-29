@@ -37,7 +37,7 @@ public class BouncyBlocksMX extends PluginBase implements Listener {
             try {
                 String blockName = entry.getKey();
                 double jumpPower = ((Number) entry.getValue()).doubleValue();
-                bouncyBlocks.put(blockName.toLowerCase(), jumpPower);
+                bouncyBlocks.put(blockName.toLowerCase().replace(" ", "_"), jumpPower);
             } catch (NumberFormatException e) {
                 this.getLogger().warning("Некорректный ID блока в конфиге: " + entry.getKey());
             } catch (ClassCastException e) {
@@ -47,13 +47,11 @@ public class BouncyBlocksMX extends PluginBase implements Listener {
     }
 
     private boolean isBouncyBlock(Block block) {
-        boolean result = bouncyBlocks.containsKey(block.getName().toLowerCase().replace(" ", "_"));
-        return result;
+        return bouncyBlocks.containsKey(block.getName().toLowerCase().replace(" ", "_"));
     }
 
     private double getJumpPower(Block block) {
-        double jumpPower = bouncyBlocks.get(block.getName().toLowerCase().replace(" ", "_"));
-        return jumpPower;
+        return bouncyBlocks.get(block.getName().toLowerCase().replace(" ", "_"));
     }
 
     @EventHandler

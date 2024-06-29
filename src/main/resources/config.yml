@@ -7,4 +7,4 @@ BouncyBlocks:
 
 # bounce_on_wool: Specifies whether the plugin should check for the presence of wool under the plate to activate the bounce.
 # If set to true, the player will only be bounced if there is wool underneath the plate.
-bounce_on_wool: false
+bounce_on_wool: true

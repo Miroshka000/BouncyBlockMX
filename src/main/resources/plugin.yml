@@ -1,5 +1,5 @@
 name: BouncyBlocksMX
 main: BouncyBlocksMX.BouncyBlocksMX
-version: "1.4"
+version: "1.4-pnx"
 author: Miroshka
-api: 1.0.0
+api: 2.0.0

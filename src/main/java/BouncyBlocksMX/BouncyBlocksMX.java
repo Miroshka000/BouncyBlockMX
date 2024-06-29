@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class BouncyBlocksMX extends PluginBase implements Listener {
 
-    private Map<Integer, Double> bouncyBlocks = new HashMap<>();
+    private Map<String, Double> bouncyBlocks = new HashMap<>();
     private Config config;
     private boolean bounceOnWool;
 
@@ -35,15 +35,25 @@ public class BouncyBlocksMX extends PluginBase implements Listener {
         Map<String, Object> blocks = config.getSection("BouncyBlocks").getAllMap();
         for (Map.Entry<String, Object> entry : blocks.entrySet()) {
             try {
-                int blockId = Integer.parseInt(entry.getKey());
+                String blockName = entry.getKey();
                 double jumpPower = ((Number) entry.getValue()).doubleValue();
-                bouncyBlocks.put(blockId, jumpPower);
+                bouncyBlocks.put(blockName.toLowerCase(), jumpPower);
             } catch (NumberFormatException e) {
                 this.getLogger().warning("Некорректный ID блока в конфиге: " + entry.getKey());
             } catch (ClassCastException e) {
                 this.getLogger().warning("Некорректная сила прыжка для блока " + entry.getKey());
             }
         }
+    }
+
+    private boolean isBouncyBlock(Block block) {
+        boolean result = bouncyBlocks.containsKey(block.getName().toLowerCase().replace(" ", "_"));
+        return result;
+    }
+
+    private double getJumpPower(Block block) {
+        double jumpPower = bouncyBlocks.get(block.getName().toLowerCase().replace(" ", "_"));
+        return jumpPower;
     }
 
     @EventHandler
@@ -54,14 +64,14 @@ public class BouncyBlocksMX extends PluginBase implements Listener {
         Block blockBelowFeetTwo = location.subtract(0, 2, 0).getLevelBlock();
         Block blockBelowHead = location.subtract(0, 2, 0).getLevelBlock();
 
-        if (bouncyBlocks.containsKey(blockBelowFeet.getId())) {
+        if (isBouncyBlock(blockBelowFeet)) {
             if (!bounceOnWool || (bounceOnWool && blockBelowFeetTwo instanceof BlockWool)) {
-                double jumpPower = bouncyBlocks.get(blockBelowFeet.getId());
+                double jumpPower = getJumpPower(blockBelowFeet);
                 player.setMotion(player.getMotion().add(0, jumpPower, 0));
             }
-        } else if (bouncyBlocks.containsKey(blockBelowHead.getId())) {
+        } else if (isBouncyBlock(blockBelowHead)) {
             if (!bounceOnWool || (bounceOnWool && blockBelowFeet instanceof BlockWool)) {
-                double jumpPower = bouncyBlocks.get(blockBelowHead.getId());
+                double jumpPower = getJumpPower(blockBelowHead);
                 player.setMotion(player.getMotion().add(0, jumpPower, 0));
             }
         }

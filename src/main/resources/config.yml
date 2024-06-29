@@ -1,9 +1,10 @@
 # BouncyBlocks: Contains blocks that can bounce the player.
 # Each block (by ID) is associated with a jump power.
 BouncyBlocks:
-  '70': 2.5 #Stone Pressure Plate - 2.5
-  '147': 2.0 #Light Weighted Pressure Plate (Gold) - 2.0
-  '148': 1.7 #Heavy Weighted Pressure Plate (Iron) - 1.7
+  stone_pressure_plate: 2.5 # Stone Pressure Plate - 2.5
+  light_weighted_pressure_plate: 2.0 # Light Weighted Pressure Plate (Gold) - 2.0
+  heavy_weighted_pressure_plate: 1.7 # Heavy Weighted Pressure Plate (Iron) - 1.7
+
 # bounce_on_wool: Specifies whether the plugin should check for the presence of wool under the plate to activate the bounce.
 # If set to true, the player will only be bounced if there is wool underneath the plate.
-bounce_on_wool: true
+bounce_on_wool: false

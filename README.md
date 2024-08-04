@@ -23,6 +23,3 @@ The plugin is perfect for creating parkour maps and unique arenas where player d
 
 BouncyBlocksMX transforms ordinary movement through the Minecraft world into an exciting adventure, adding elements of surprise and fun. It's a great way to diversify gameplay on your server, introducing new and engaging aspects.
 
----
-
-This README provides a clear and structured overview of your plugin, its features, applications, and installation instructions.

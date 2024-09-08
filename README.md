@@ -1,25 +1,34 @@
 # BouncyBlocksMX
 
-BouncyBlocksMX is a plugin for Minecraft servers based on Nukkit that adds a unique physical feature to blocks in the Minecraft world. With this plugin, certain blocks can give players an extra boost when they jump or step on them, making movement across the map more dynamic and interesting.
+**BouncyBlocksMX** is a lightweight and configurable plugin for the Nukkit Minecraft server platform that allows players to be launched into the air when they step on certain blocks. The plugin offers fully customizable jump mechanics, letting server admins set the jump power for different block types. Players can experience exciting, trampoline-like effects on specific blocks, enhancing gameplay dynamics and adding fun interactions in-game.
 
-## Key Features
+## Features
 
-- **Bounce Customization**: Server administrators can configure the bounce strength for each type of block through the `config.yml` configuration file. This allows control over how high players are propelled when they step on special blocks.
-- **Easy Configuration Management**: The configuration file can be manually edited to add or change bounce parameters for blocks. The plugin automatically applies these changes without needing to reload the server.
-- **Compatibility and Safety**: The plugin is designed with compatibility for the latest versions of Nukkit in mind and ensures safety by automatically canceling fall damage for players using bounce features.
+- **Customizable Jump Blocks**: Define which blocks trigger jumps and configure their jump strength via an easy-to-use configuration file.
+- **Supports Wool Blocks**: Optionally enable or disable bounce mechanics specifically for wool blocks.
+- **Configurable Sounds**: Add sound effects when players jump, enhancing immersion and feedback.
+- **Fall Damage Protection**: Automatically cancels fall damage when players land after jumping from configured blocks.
+- **Smooth Performance**: Optimized with periodic tasks for efficient jump checks, ensuring minimal impact on server performance.
+- **Easy Configuration**: Modify block jump power directly in the configuration file without needing to reload or restart the server.
 
-## Applications
+## Commands and Permissions
 
-The plugin is perfect for creating parkour maps and unique arenas where player dynamics and mobility can radically alter standard gameplay. It can also be used in thematic worlds where special interactivity and unusual physics elements are required.
+No commands or permissions are needed. Simply configure your blocks and enjoy the fun!
 
-## Installation Instructions
+## Installation
 
-1. **Download** the `BouncyBlocksMX.jar` plugin file.
-2. **Place** it in the `plugins` folder on your Nukkit server.
-3. **Restart** the server or load the plugin using the appropriate command in the server console.
-4. **Edit** the `config.yml` file in the plugin folder to customize the bounce settings for different blocks as desired.
+1. Download the latest release of **BouncyBlocksMX** from the [Releases]([https://github.com/your-repo/releases](https://github.com/Miroshka000/BouncyBlockMX/releases)) page.
+2. Place the `.jar` file into your server's `/plugins/` directory.
+3. Restart your Nukkit server.
+4. Edit the `config.yml` to customize your bouncy blocks.
+5. Enjoy the new jump mechanics in-game!
 
-## Conclusion
+## Future Features
 
-BouncyBlocksMX transforms ordinary movement through the Minecraft world into an exciting adventure, adding elements of surprise and fun. It's a great way to diversify gameplay on your server, introducing new and engaging aspects.
+- Customizable cooldowns between jumps.
+- Additional block interaction mechanics.
+- More sound and visual effects for different block types.
 
+## Contributing
+
+We welcome contributions! Feel free to submit pull requests or open issues with suggestions or bug reports.

@@ -1,9 +1,14 @@
-# BouncyBlocks: Contains blocks that can bounce the player.
-# Each block (by ID) is associated with a jump power.
+# Jump Block Settings
 BouncyBlocks:
-  '70': 2.5 #Stone Pressure Plate - 2.5
-  '147': 2.0 #Light Weighted Pressure Plate (Gold) - 2.0
-  '148': 1.7 #Heavy Weighted Pressure Plate (Iron) - 1.7
-# bounce_on_wool: Specifies whether the plugin should check for the presence of wool under the plate to activate the bounce.
-# If set to true, the player will only be bounced if there is wool underneath the plate.
-bounce_on_wool: true
+  # Teleportation may occur with power greater than 3.0!
+  # Example: diamond block (ID 57) with jump power 3.7
+
+  "57": 3.0  # Diamond Block
+  "41": 2.0  # Gold Block
+  "42": 1.0  # Iron Block
+
+  # Inactive Blocks:
+  # "7": 7.0   # Bedrock
+  # "152": 1.5 # Redstone Block
+  # "89": 2.5  # Glowstone Block
+  # "1": 1.0   # Stone Block

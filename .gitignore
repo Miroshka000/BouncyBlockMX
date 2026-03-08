@@ -1,7 +1,13 @@
 ### IntelliJ IDEA ###
+.idea/
+*.iml
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+.gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
 ### Eclipse ###
 .apt_generated
@@ -27,3 +33,8 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Logs ###
+logs/
+*.log
+hs_err_pid*

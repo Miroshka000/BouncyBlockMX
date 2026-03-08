@@ -1,0 +1,8 @@
+triggerBlocks:
+  - "minecraft:stone_pressure_plate"
+  - "minecraft:wooden_pressure_plate"
+
+bouncyBlocks:
+  "minecraft:diamond_block": 3.0
+  "minecraft:gold_block": 2.0
+  "minecraft:iron_block": 1.0

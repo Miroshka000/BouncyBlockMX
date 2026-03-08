@@ -1,0 +1,5 @@
+name: BouncyBlocksMX
+main: miroshka.nukkit.BouncyBlocksNukkitPlugin
+version: "${version}"
+author: Miroshka
+api: 1.0.0

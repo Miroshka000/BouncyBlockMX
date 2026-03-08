@@ -1,0 +1,88 @@
+﻿name: Build and Release
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - .github/workflows/gradle.yml
+      - gradle/**
+      - gradlew
+      - gradlew.bat
+      - settings.gradle.kts
+      - build.gradle.kts
+      - bouncy-core/**
+      - bouncy-platform-nukkit/**
+      - bouncy-platform-allay/**
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      version: ${{ steps.get_version.outputs.version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: zulu
+          java-version: '17'
+
+      - name: Setup Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: zulu
+          java-version: '21'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Extract Version
+        id: get_version
+        shell: bash
+        run: |
+          VERSION=$(grep '^version = ' build.gradle.kts | sed 's/version = "//' | sed 's/"//')
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Build
+        shell: bash
+        run: |
+          chmod +x gradlew
+          ./gradlew build
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: BouncyBlocksMX-${{ steps.get_version.outputs.version }}
+          path: |
+            bouncy-platform-nukkit/build/libs/*.jar
+            bouncy-platform-allay/build/libs/*.jar
+
+  release:
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: BouncyBlocksMX-${{ needs.build.outputs.version }}
+          path: artifacts
+
+      - name: Create or Update Release
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          artifactErrorsFailBuild: true
+          artifacts: artifacts/**/*.jar
+          generateReleaseNotes: true
+          name: Release v${{ needs.build.outputs.version }}
+          replacesArtifacts: true
+          tag: v${{ needs.build.outputs.version }}
